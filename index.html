@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <style></style>
+    <title>Multilingual Virtual Keyboard</title>
+  </head>
+
+  <body>
+    <div class="logo-container">
+      <img
+        src="https://live.staticflickr.com/65535/51262624119_07fb913283_z.jpg"
+        alt="Logo 1"
+      />
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTspVaOKZymKXFu17KygNZ19qwhkkKoskh0gCh-WGuT&s"
+        alt="Logo 2"
+      />
+    </div>
+    <p id="introduction">
+      Welcome to the Multilingual Virtual Keyboard provided by the University of
+      Montana-DCLCP. Whether you are an absolute beginner or an experienced
+      language learner, we've got you covered! Simply pick your target language
+      from the options below and start typing using the virtual keyboard on your
+      computer, tablet, or any device. Learn the alphabit of your target with a
+      fun and interactive way. Please note that the keyboard is only coded to
+      work with the Arabic language.
+    </p>
+    <div id="languageSelector">
+      <button onclick="loadKeyboard('arabic')">Arabic</button>
+      <button onclick="loadKeyboard('french')">French</button>
+      <button onclick="loadKeyboard('russian')">Russian</button>
+      <button onclick="loadKeyboard('farsi')">Farsi</button>
+      <!-- Add more language buttons as needed -->
+    </div>
+
+    <div id="virtualKeyboard"></div>
+
+    <div id="output">
+      <!-- Display the typed word/sentence here -->
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
