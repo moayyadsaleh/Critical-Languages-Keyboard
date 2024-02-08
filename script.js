@@ -12,13 +12,14 @@ function loadKeyboard(language) {
 
 function loadArabicKeyboard() {
   const arabicKeyboardLayout = [
+    ["١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩", "٠"],
     ["ض", "ص", "ث", "ق", "ف", "غ", "ع", "ه", "خ", "ح"],
-    ["ش", "س", "ي", "ب", "ل", "ا", "ت", "ن", "م", "ك"],
-    ["ظ", "ط", "ذ", "د", "ز", "ر", "و", "ة", "ى", "ء"],
+    ["ج", "چ", "ح", "خ", "ه", "ع", "غ", "ف", "ق", "ث"],
+    ["ش", "س", "ي", "ب", "ل", "ا", "أ", "آ", "لأ", "ت", "ن", "م", "ك"],
+    ["ظ", "ط", "ذ", "د", "ز", "ر", "و", "ؤ", "ء", "ى"],
     ["َ", "ً", "ُ", "ٌ", "ِ", "ٍ", "ْ", "ّ", "إ", "ئ"],
     ["backspace", "space"],
   ];
-
   const virtualKeyboard = document.getElementById("virtualKeyboard");
 
   arabicKeyboardLayout.forEach((row) => {
