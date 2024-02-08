@@ -12,7 +12,7 @@ body {
   margin-bottom: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
-  transition: background-color 0.3s ease; /* Add transition for smooth effect */
+  transition: background-color 0.3s ease;
 }
 
 #introduction:hover {
@@ -43,7 +43,7 @@ button {
 }
 
 button:hover {
-  background-color: black; /* Change the color on hover */
+  background-color: black;
 }
 
 #virtualKeyboard {
@@ -65,12 +65,12 @@ button:hover {
   border: 2px solid #70002e;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Add transition for smooth effect */
+  transition: background-color 0.3s ease;
 }
 
 #output:hover {
-  background-color: black; /* Change the background color on hover */
-  color: whitesmoke; /* Change the text color on hover */
+  background-color: black;
+  color: whitesmoke;
 }
 .logo-container {
   display: flex;
