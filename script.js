@@ -18,7 +18,7 @@ function loadArabicKeyboard() {
     ["ش", "س", "ي", "ب", "ل", "ا", "أ", "آ", "لأ", "ت", "ن", "م", "ك"],
     ["ظ", "ط", "ذ", "د", "ز", "ر", "و", "ؤ", "ء", "ى"],
     ["َ", "ً", "ُ", "ٌ", "ِ", "ٍ", "ْ", "ّ", "إ", "ئ"],
-    ["backspace", "space"],
+    ["،", "؛", ":", ".", "?", "!", "backspace", "space"],
   ];
   const virtualKeyboard = document.getElementById("virtualKeyboard");
 
