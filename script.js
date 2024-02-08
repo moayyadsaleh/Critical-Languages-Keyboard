@@ -1,6 +1,5 @@
 function loadKeyboard(language) {
   document.getElementById("virtualKeyboard").innerHTML = "";
-  document.getElementById("output").innerHTML = "<span id='typingLine'></span>";
 
   switch (language) {
     case "arabic":
@@ -10,6 +9,7 @@ function loadKeyboard(language) {
 
   document.getElementById("virtualKeyboard").style.display = "block";
 }
+
 function loadArabicKeyboard() {
   const arabicKeyboardLayout = [
     ["١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩", "٠"],
@@ -55,7 +55,6 @@ document.addEventListener("keydown", function (event) {
 function handleBackspace() {
   const outputElement = document.getElementById("output");
   outputElement.textContent = outputElement.textContent.slice(0, -1);
-  updateTypingLine(outputElement.textContent);
 }
 
 document.addEventListener("keydown", function (event) {
@@ -68,10 +67,4 @@ document.addEventListener("keydown", function (event) {
 function handleKeyClick(key) {
   const outputElement = document.getElementById("output");
   outputElement.textContent += key;
-  updateTypingLine(outputElement.textContent);
-}
-
-function updateTypingLine(text) {
-  const typingLine = document.getElementById("typingLine");
-  typingLine.textContent = text;
 }

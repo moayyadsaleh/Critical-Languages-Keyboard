@@ -126,3 +126,18 @@ button:hover {
     font-size: 14px; /* Adjust button font size for smaller screens */
   }
 }
+#typingLine {
+  border-right: 2px solid black; /* Set border for cursor line */
+  display: inline-block;
+  animation: blinkCursor 0.7s infinite; /* Blinking animation */
+}
+
+@keyframes blinkCursor {
+  0%,
+  100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black;
+  }
+}
