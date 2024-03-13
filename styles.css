@@ -83,15 +83,12 @@ button:hover {
 }
 
 #output {
+  max-width: 1500px;
   font-size: 20px;
-  font-weight: bold;
-  text-align: center;
-  padding: 15px;
-  margin: 20px;
-  border: 2px solid #70002e;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 #output:hover {
