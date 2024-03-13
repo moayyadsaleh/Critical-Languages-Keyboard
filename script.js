@@ -101,6 +101,41 @@ function loadRussianKeyboard() {
     virtualKeyboard.appendChild(rowElement);
   });
 }
+function loadFarsiKeyboard() {
+  const farsiKeyboardLayout = [
+    ["۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹", "۰"],
+    ["ض", "ص", "ث", "ق", "ف", "غ", "ع", "ه", "خ", "ح"],
+    ["ج", "چ", "ح", "خ", "ة", "ع", "غ", "ف", "ق", "ث"],
+    ["ش", "س", "ی", "ب", "ل", "ا", "أ", "آ", "لأ", "ت", "ن", "م", "ک"],
+    ["ظ", "ط", "ذ", "د", "ز", "ر", "و", "ؤ", "ء", "ى"],
+    ["َ", "ً", "ُ", "ٌ", "ِ", "ٍ", "ْ", "ّ", "إ", "ئ"],
+    ["،", "؛", ":", ".", "؟", "!", "backspace", "space"],
+  ];
+  const virtualKeyboard = document.getElementById("virtualKeyboard");
+
+  farsiKeyboardLayout.forEach((row) => {
+    const rowElement = document.createElement("div");
+    rowElement.className = "keyboard-row";
+
+    row.forEach((key) => {
+      const keyElement = document.createElement("button");
+      keyElement.textContent =
+        key === "backspace" ? "⌫" : key === "space" ? "␣" : key;
+      keyElement.addEventListener("click", () => {
+        if (key === "backspace") {
+          handleBackspace();
+        } else if (key === "space") {
+          handleKeyClick(" ");
+        } else {
+          handleKeyClick(key);
+        }
+      });
+      rowElement.appendChild(keyElement);
+    });
+
+    virtualKeyboard.appendChild(rowElement);
+  });
+}
 
 function loadKoreanKeyboard() {
   const koreanKeyboardLayout = [
@@ -134,6 +169,7 @@ function loadKoreanKeyboard() {
     virtualKeyboard.appendChild(rowElement);
   });
 }
+
 function loadFrenchKeyboard() {
   const frenchKeyboardLayout = [
     ["&", "é", '"', "'", "(", ")", "-", "è", "_", "ç"],
