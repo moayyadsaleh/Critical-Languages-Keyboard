@@ -8,6 +8,9 @@ function loadKeyboard(language) {
     case "russian":
       loadRussianKeyboard();
       break;
+    case "thai":
+      loadThaiKeyboard();
+      break;
     case "farsi":
       loadFarsiKeyboard();
       break;
@@ -79,6 +82,40 @@ function loadRussianKeyboard() {
   const virtualKeyboard = document.getElementById("virtualKeyboard");
 
   russianKeyboardLayout.forEach((row) => {
+    const rowElement = document.createElement("div");
+    rowElement.className = "keyboard-row";
+
+    row.forEach((key) => {
+      const keyElement = document.createElement("button");
+      keyElement.textContent =
+        key === "backspace" ? "⌫" : key === "space" ? "␣" : key;
+      keyElement.addEventListener("click", () => {
+        if (key === "backspace") {
+          handleBackspace();
+        } else if (key === "space") {
+          handleKeyClick(" ");
+        } else {
+          handleKeyClick(key);
+        }
+      });
+      rowElement.appendChild(keyElement);
+    });
+
+    virtualKeyboard.appendChild(rowElement);
+  });
+}
+function loadThaiKeyboard() {
+  const thaiKeyboardLayout = [
+    ["ๅ", "/", "-", "ภ", "ถ", "ุ", "ึ", "ค", "ต", "จ"],
+    ["ข", "ช", "ๆ", "ไ", "ำ", "พ", "ะ", "ั", "ี", "ร"],
+    ["น", "ย", "บ", "ล", "ฃ", "ฟ", "ห", "ก", "ด", "เ"],
+    ["้", "่", "า", "ส", "ว", "ง", "ผ", "ป", "แ", "อ"],
+    ["็", "โ", "ฌ", "็", "space", "backspace"],
+  ];
+
+  const virtualKeyboard = document.getElementById("virtualKeyboard");
+
+  thaiKeyboardLayout.forEach((row) => {
     const rowElement = document.createElement("div");
     rowElement.className = "keyboard-row";
 
