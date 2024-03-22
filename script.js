@@ -327,11 +327,10 @@ function loadIndonesianKeyboard() {
 function loadKoreanKeyboard() {
   const koreanKeyboardLayout = [
     ["ㅂ", "ㅈ", "ㄷ", "ㄱ", "ㅅ", "ㅛ", "ㅕ", "ㅑ", "ㅐ", "ㅔ"],
-    ["ㅁ", "ㄴ", "ㅇ", "ㄹ", "ㅎ", "ㅗ", "ㅓ", "ㅏ", "ㅣ", "backspace"],
-    ["ㅋ", "ㅌ", "ㅊ", "ㅍ", "ㅠ", "ㅜ", "ㅡ", "ㅃ", "ㅉ", "ㄸ"],
-    ["ㄲ", "ㅆ", ".", ",", "space"],
+    ["ㅁ", "ㄴ", "ㅇ", "ㄹ", "ㅎ", "ㅗ", "ㅓ", "ㅏ", "ㅣ"],
+    ["ㅋ", "ㅌ", "ㅊ", "ㅍ", "ㅠ", "ㅜ", "ㅡ"],
+    ["space", "backspace"],
   ];
-
   const virtualKeyboard = document.getElementById("virtualKeyboard");
 
   koreanKeyboardLayout.forEach((row) => {
@@ -341,11 +340,11 @@ function loadKoreanKeyboard() {
     row.forEach((key) => {
       const keyElement = document.createElement("button");
       keyElement.textContent =
-        key === "backspace" ? "⌫" : key === " " ? "␣" : key;
+        key === "backspace" ? "⌫" : key === "space" ? "␣" : key;
       keyElement.addEventListener("click", () => {
         if (key === "backspace") {
           handleBackspace();
-        } else if (key === " ") {
+        } else if (key === "space") {
           handleKeyClick(" ");
         } else {
           handleKeyClick(key);
@@ -357,6 +356,7 @@ function loadKoreanKeyboard() {
     virtualKeyboard.appendChild(rowElement);
   });
 }
+
 function loadPortugueseKeyboard() {
   const portugueseKeyboardLayout = [
     ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"],
@@ -409,12 +409,12 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
-function handleKeyClick(key) {
-  const typedTextElement = document.getElementById("typedText");
-  typedTextElement.value += key;
+function handleBackspace() {
+  const outputElement = document.getElementById("output");
+  outputElement.textContent = outputElement.textContent.slice(0, -1);
 }
 
-function handleBackspace() {
-  const typedTextElement = document.getElementById("typedText");
-  typedTextElement.value = typedTextElement.value.slice(0, -1);
+function handleKeyClick(key) {
+  const outputElement = document.getElementById("output");
+  outputElement.textContent += key;
 }
