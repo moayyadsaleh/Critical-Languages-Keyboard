@@ -409,12 +409,12 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
-function handleBackspace() {
-  const outputElement = document.getElementById("output");
-  outputElement.textContent = outputElement.textContent.slice(0, -1);
+function handleKeyClick(key) {
+  const typedTextElement = document.getElementById("typedText");
+  typedTextElement.value += key;
 }
 
-function handleKeyClick(key) {
-  const outputElement = document.getElementById("output");
-  outputElement.textContent += key;
+function handleBackspace() {
+  const typedTextElement = document.getElementById("typedText");
+  typedTextElement.value = typedTextElement.value.slice(0, -1);
 }
