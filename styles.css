@@ -1,151 +1,112 @@
 body {
   font-family: "Arial", sans-serif;
-  margin: 20px;
-  background-color: #f4f4f4;
-}
-
-#introduction {
-  background-color: #70002e;
-  color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: background-color 0.3s ease;
-}
-
-#introduction:hover {
-  background-color: black;
-  color: whitesmoke;
-}
-
-#introduction p {
+  background: linear-gradient(135deg, #1e1e2f, #2e2e4f);
+  color: #ffffff;
   margin: 0;
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-#languageSelector {
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-button {
-  padding: 10px;
-  margin: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  display: ce;
-  background-color: #70002e;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: black;
-}
-
-#virtualKeyboard {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 10px;
-  justify-content: center;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  text-align: center;
-  margin-bottom: 20px;
-  background-color: #fff;
-  padding: 20px;
-  border: 2px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  min-height: 100vh;
 }
 
-#virtualKeyboard button {
-  padding: 15px;
-  margin: 5px;
-  font-size: 20px;
-  cursor: pointer;
-  background-color: #f4f4f4;
-  color: #333;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, color 0.3s ease,
-    border-color 0.3s ease;
-}
-
-#virtualKeyboard button:hover {
-  background-color: #ddd;
-  color: #555;
-  border-color: #ccc;
-}
-
-#output {
-  max-width: 1500px;
-  font-size: 20px;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#output:hover {
-  background-color: black;
-  color: whitesmoke;
-}
 .logo-container {
   display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
+  gap: 20px;
+  margin-bottom: 20px;
 }
 
 .logo-container img {
-  max-width: 150px;
-  height: auto;
-  margin-right: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s;
 }
+
+.logo-container img:hover {
+  transform: scale(1.1);
+}
+
+#introduction {
+  text-align: center;
+  margin: 20px;
+  font-size: 18px;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+#languageSelector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+#languageSelector button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  color: #ffffff;
+  background: linear-gradient(45deg, #ff6f61, #ff3d77);
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#languageSelector button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+#output {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
 #typedText {
-  width: 100%;
-  height: 100px;
+  width: 90%;
+  max-width: 600px;
+  padding: 15px;
+  border-radius: 15px;
+  border: none;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+#virtualKeyboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  max-width: 600px;
+  margin: 20px 0;
+}
+
+#virtualKeyboard button {
   padding: 10px;
-  margin-top: 10px;
-  font-size: 20px; /* Increase font size */
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  resize: vertical; /* Allow vertical resizing */
-  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
-}
-/* Media query for devices with a maximum width of 768px (tablets and mobile devices) */
-@media only screen and (max-width: 768px) {
-  #virtualKeyboard {
-    grid-template-columns: repeat(
-      4,
-      minmax(60px, 1fr)
-    ); /* Adjust button width for smaller screens */
-    padding: 10px; /* Adjust padding for smaller screens */
-  }
-
-  #virtualKeyboard button {
-    padding: 8px; /* Adjust button padding for smaller screens */
-    font-size: 14px; /* Adjust button font size for smaller screens */
-  }
-}
-#typingLine {
-  border-right: 2px solid black; /* Set border for cursor line */
-  display: inline-block;
-  animation: blinkCursor 0.7s infinite; /* Blinking animation */
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #ffffff;
+  background: linear-gradient(45deg, #4e54c8, #8f94fb);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-@keyframes blinkCursor {
-  0%,
-  100% {
-    border-color: transparent;
-  }
-  50% {
-    border-color: black;
-  }
+#virtualKeyboard button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
 }
